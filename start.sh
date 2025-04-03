@@ -273,7 +273,7 @@ if [[ "${INIT_LAUNCH}" == "True" ]]; then
 else
 	echo -e " > ${CINFO}Checking for container updates...${COFF}"
 fi
-docker-compose --log-level ERROR --file ./compose/docker-tor.yml --file ./compose/docker-bitcoin.yml --file ./compose/docker-electrs.yml --file ./compose/docker-lightning.yml --file ./compose/docker-extras.yml pull
+docker compose  -f ./compose/docker-tor.yml -f ./compose/docker-bitcoin.yml -f ./compose/docker-electrs.yml -f ./compose/docker-lightning.yml -f ./compose/docker-extras.yml pull
 echo -e " > ${CSUCCESS}Docker containers have been pulled as needed!${COFF}"
 
 # Hashes provided tor password.
